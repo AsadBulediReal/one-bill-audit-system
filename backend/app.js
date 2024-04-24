@@ -7,7 +7,6 @@ const xlsx = require("xlsx");
 const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const db = require("./db/db");
 const oneBillDb = require("./db/onedb");
 const archiver = require("archiver");
 app.use(cors());
@@ -208,39 +207,39 @@ app.post("/upload", async (req, res) => {
 
       if (getCategorie === undefined) {
         oneBillDb["nullData"].create({
-          "Branch Code": barnchCode || null,
-          "Branch Name": record[1] || null,
-          "Deposit Slip No": depositSlipNo || null,
-          "Collection Date": collectionDate || null,
-          "Mode of Payment": record[4] || null,
-          Amount: record[6] || null,
-          "Credit Date": creditDate || null,
-          "Challan Number": challan || null,
-          "Student Name": record[9] || null,
-          "Father Name": record[10] || null,
-          Surname: record[11] || null,
-          CNIC: record[12] || null,
-          Program: record[13] || null,
-          Description: record[14] || null,
+          "Branch Code": barnchCode || 0,
+          "Branch Name": record[1] || "No Data",
+          "Deposit Slip No": depositSlipNo || 0,
+          "Collection Date": collectionDate,
+          "Mode of Payment": record[4] || "No Data",
+          Amount: record[6] || 0,
+          "Credit Date": creditDate,
+          "Challan Number": challan || 0,
+          "Student Name": record[9] || "No Data",
+          "Father Name": record[10] || "No Data",
+          Surname: record[11] || "No Data",
+          CNIC: record[12] || "No Data",
+          Program: record[13] || "No Data",
+          Description: record[14] || "No Data",
         });
         return;
       }
 
       oneBillDb[getCategorie].create({
-        "Branch Code": barnchCode || null,
-        "Branch Name": record[1] || null,
-        "Deposit Slip No": depositSlipNo || null,
-        "Collection Date": collectionDate || null,
-        "Mode of Payment": record[4] || null,
-        Amount: record[6] || null,
-        "Credit Date": creditDate || null,
-        "Challan Number": challan || null,
-        "Student Name": record[9] || null,
-        "Father Name": record[10] || null,
-        Surname: record[11] || null,
-        CNIC: record[12] || null,
-        Program: record[13] || null,
-        Description: record[14] || null,
+        "Branch Code": barnchCode || 0,
+        "Branch Name": record[1] || "No Data",
+        "Deposit Slip No": depositSlipNo || 0,
+        "Collection Date": collectionDate,
+        "Mode of Payment": record[4] || "No Data",
+        Amount: record[6] || 0,
+        "Credit Date": creditDate,
+        "Challan Number": challan || 0,
+        "Student Name": record[9] || "No Data",
+        "Father Name": record[10] || "No Data",
+        Surname: record[11] || "No Data",
+        CNIC: record[12] || "No Data",
+        Program: record[13] || "No Data",
+        Description: record[14] || "No Data",
       });
     });
   };

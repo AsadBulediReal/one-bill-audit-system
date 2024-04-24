@@ -5,14 +5,14 @@ async function connectDB() {
 }
 
 const sechema = new mongoose.Schema({
-  "Branch Code": { type: Number, required: true },
+  "Branch Code": { type: Number },
   "Branch Name": { type: String, required: true },
-  "Deposit Slip No": { type: Number, required: true },
-  "Collection Date": { type: Date, required: true },
+  "Deposit Slip No": { type: Number },
+  "Collection Date": { type: Date },
   "Mode of Payment": { type: String, required: true },
-  Amount: { type: Number, required: true },
-  "Credit Date": { type: Date, required: true },
-  "Challan Number": { type: Number, required: true },
+  Amount: { type: Number },
+  "Credit Date": { type: Date },
+  "Challan Number": { type: Number },
   "Student Name": { type: String, required: true },
   "Father Name": { type: String, required: true },
   Surname: { type: String },
